@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Home } from "./components/Home";
@@ -18,8 +18,9 @@ initializeApp({
 });
 
 function App() {
+	const [theme, setTheme] = useState();
 	return (
-		<>
+		<div className="app">
 			<BrowserRouter>
 				<Nav />
 				<Switch>
@@ -30,7 +31,7 @@ function App() {
 				</Switch>
 			</BrowserRouter>
 			<Footer />
-		</>
+		</div>
 	);
 }
 

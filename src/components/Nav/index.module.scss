@@ -1,0 +1,11 @@
+@import "../../themes.scss";
+
+.nav {
+	display: flex;
+	height: 80px;
+
+	@include themify($themes) {
+		color: themed("textColor");
+		background-color: themed("backgroundColor");
+	}
+}
