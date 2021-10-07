@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, DocumentData, query } from "firebase/firestore";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Home } from "./components/Home";
+import { Nav } from "./components/Nav";
+import { Footer } from "./components/Footer";
+import { Subscribe } from "./components/Subscribe";
+import { About } from "./components/About";
+import { NotFound } from "./components/NotFound";
 
 initializeApp({
 	apiKey: "AIzaSyBhw-LJ7nVCLyq7ofN48_OK3AydrKH8vNg",
@@ -11,26 +17,21 @@ initializeApp({
 	appId: "1:965720024585:web:9b03575270882016753ad8",
 });
 
-const db = getFirestore();
-
 function App() {
-	const [data, setData] = useState<{}[]>();
-	const queryStuff = async (): Promise<DocumentData[]> => {
-		const arr: DocumentData[] = [];
-		const resQuery = query(collection(db, "posts"));
-		await getDocs(resQuery).then((snapshot) => {
-			snapshot.docs.map((doc) => arr.push(doc.data()));
-		});
-		return arr;
-	};
-
-	useEffect(() => {
-		queryStuff().then((res) => setData(res));
-	}, []);
-
-	console.log(data);
-
-	return <div></div>;
+	return (
+		<>
+			<BrowserRouter>
+				<Nav />
+				<Switch>
+					<Route path="/" exact component={Home} />
+					<Route path="/about" exact component={About} />
+					<Route path="/subscribe" exact component={Subscribe} />
+					<Route component={NotFound} />
+				</Switch>
+			</BrowserRouter>
+			<Footer />
+		</>
+	);
 }
 
 export default App;
