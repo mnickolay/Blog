@@ -23,6 +23,7 @@
 		"comma-spacing": "off",
 		"no-unused-vars": "warn",
 		"no-tabs": "off",
-		"indent": "off"
+		"indent": "off",
+		"multiline-ternary": "off"
 	}
 }

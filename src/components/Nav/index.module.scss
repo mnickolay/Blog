@@ -1,11 +1,54 @@
 @import "../../themes.scss";
 
 .nav {
+	background-color: var(--accentPrimary);
 	display: flex;
-	height: 80px;
+	height: 70px;
 
-	@include themify($themes) {
-		color: themed("textColor");
-		background-color: themed("backgroundColor");
+	.navName {
+		align-items: center;
+		color: var(--textShowOnAccent);
+		display: flex;
+		flex-grow: 1;
+		font-size: 2rem;
+		margin-left: 30px;
+	}
+
+	.navLinks {
+		color: var(--textShowOnAccent) !important;
+		align-items: center;
+		display: flex;
+		flex-grow: 4;
+		justify-content: end;
+		margin-right: 30px;
+		text-decoration: none;
+
+		.navLinkSelected {
+			background-color: var(--accentSecondary) !important;
+			box-shadow: var(--boxShadowButton);
+		}
+
+		.navLink {
+			align-items: center;
+			background-color: transparent;
+			border: 1px solid transparent;
+			border-radius: 50px;
+			height: fit-content;
+			margin-left: 20px;
+			padding: 8px 15px;
+			text-decoration: none;
+			transition: all ease 0.3s;
+		}
+
+		.navLink:hover {
+			border: 1px solid var(--accentSecondary);
+			box-shadow: var(--boxShadowButton);
+			transition: all ease 0.3s;
+		}
+
+		.navLink:visited {
+			color: var(--textShowOnAccent) !important;
+			text-decoration: none;
+		}
 	}
 }

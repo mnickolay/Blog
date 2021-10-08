@@ -1,20 +1,32 @@
-$themes: (
-	light: (
-		backgroundColor: #fff,
-		textColor: #408bbd,
-		buttonTextColor: #408bbd,
-		buttonTextTransform: none,
-		buttonTextHoverColor: #61b0e7,
-		buttonColor: #fff,
-		buttonBorder: 2px solid #fff,
-	),
-	dark: (
-		backgroundColor: #222,
-		textColor: #ddd,
-		buttonTextColor: #aaa,
-		buttonTextTransform: uppercase,
-		buttonTextHoverColor: #ddd,
-		buttonColor: #333,
-		buttonBorder: 1px solid #aaa,
-	),
-);
+:root {
+	--size: 1rem;
+	--font: null;
+	--borderRadius: 8px;
+	--boxShadow: 0px 10px 14px rgb(182, 182, 182), -0px 10px 14px rgb(182, 182, 182);
+	--boxShadowButton: 0px 6px 20px rgb(199, 199, 199), -0px 6px 20px rgb(199, 199, 199);
+	--textPrimary: #000;
+	--textSecondary: #555;
+	--textShowOnAccent: #000;
+	--colorPriamry: #e9e9e9;
+	--colorSecondary: #ddd;
+	--accentPrimary: #e9e9e9;
+	--accentSecondary: #fff;
+	background-color: var(--colorPriamry);
+}
+
+[data-size="xs"] {
+	--size: 0.8rem;
+}
+
+// size
+// text primary
+// text secondary
+// color primary
+// color secondary
+// accent primary
+// accent secondary
+
+// white/black
+// soft (grays)
+// earth (brown/green)
+//

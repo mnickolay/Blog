@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { initializeApp } from "firebase/app";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { Subscribe } from "./components/Subscribe";
 import { About } from "./components/About";
 import { NotFound } from "./components/NotFound";
+import css from "./App.module.scss";
+import { Post } from "./components/Post";
 
 initializeApp({
 	apiKey: "AIzaSyBhw-LJ7nVCLyq7ofN48_OK3AydrKH8vNg",
@@ -19,14 +21,16 @@ initializeApp({
 
 function App() {
 	const [theme, setTheme] = useState();
+
 	return (
-		<div className="app">
+		<div className={`${css.body} ${css.size} ${css.colorPrimary}`}>
 			<BrowserRouter>
 				<Nav />
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/about" exact component={About} />
 					<Route path="/subscribe" exact component={Subscribe} />
+					<Route path="post/:id" exact component={Post} />
 					<Route component={NotFound} />
 				</Switch>
 			</BrowserRouter>

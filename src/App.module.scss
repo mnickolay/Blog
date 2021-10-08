@@ -1,0 +1,33 @@
+@import "themes.scss";
+
+.size {
+	font-size: var(--size);
+}
+
+.textPrimary {
+	color: var(--textPrimary);
+}
+
+.textSecondary {
+	color: var(--textSecondary);
+}
+
+.colorPrimary {
+	background-color: var(--colorPriamry);
+}
+
+.colorSecondary {
+	background-color: var(--colorSecondary);
+}
+
+.accentPrimary {
+	background-color: var(--accentPrimary);
+}
+
+.accentSeconary {
+	background-color: var(--accentSecondary);
+}
+
+// .body {
+// 	height: 100vh;
+// }
