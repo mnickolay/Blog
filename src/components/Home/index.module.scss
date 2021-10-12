@@ -11,17 +11,26 @@
 		background-color: var(--colorPrimary);
 		border-radius: var(--borderRadius);
 		box-shadow: var(--boxShadow);
+		color: var(--textPrimary);
 		display: flex;
+		flex-basis: 0;
 		flex-direction: column;
 		flex-grow: 2;
-		max-width: 750px;
+		max-width: 900px;
 		transition: var(--transition);
-		width: 66%;
 
 		&:hover {
+			background-color: var(--colorSecondary);
 			box-shadow: var(--boxShadowHover);
 			transition: var(--transition);
 			transform: scale(1.02);
+		}
+
+		.loading {
+			align-items: center;
+			display: flex;
+			height: 100%;
+			justify-content: center;
 		}
 
 		.mostRecentBody {
@@ -45,16 +54,17 @@
 			}
 
 			.bodyContainer {
-				background-color: white;
 				border-radius: 0 0 8px 8px;
-				color: var(--textPrimary);
 				display: flex;
 				flex-direction: column;
 				font-family: var(--fontMerriweather);
 				height: 120px;
-				justify-content: space-between;
 				margin: 20px;
 				min-height: 120px;
+
+				.mostRecentText {
+					font-size: 0.8rem;
+				}
 
 				.nameDate {
 					align-items: flex-end;
@@ -70,22 +80,21 @@
 					}
 				}
 
-				.description {
-				}
-
 				.keywords {
 					color: var(--textSecondary);
-					font-size: 0.8rem;
+					flex-flow: column nowrap;
+					margin-top: auto;
 				}
 			}
 		}
 	}
 
-	.navContainer {
+	.searchContainer {
 		display: flex;
+		flex-basis: 0;
 		flex-direction: column;
 		flex-grow: 1;
-		max-width: 375px;
+		max-width: 450px;
 		width: 33%;
 	}
 }

@@ -5,31 +5,23 @@ import {
 	getDocs,
 	DocumentData,
 	query,
-	limit,
 	orderBy,
 	Timestamp,
 } from "firebase/firestore";
 import css from "./index.module.scss";
 import { Search } from "./Search";
-
-interface IPost {
-	id: number;
-	name: string;
-	date: string;
-	keywords: string[];
-	body: string[];
-	bodyQuotes: string[];
-	image?: string;
-	description: string;
-}
+import { IPostMinified } from "../common/IPost";
+import { useHistory } from "react-router";
 
 export function Home() {
-	const [data, setData] = useState<IPost[]>();
+	const history = useHistory();
+	const [posts, setPosts] = useState<IPostMinified[]>();
+	const [mostRecent, setMostRecent] = useState<IPostMinified>();
 	const db = getFirestore();
 
 	const queryHome = async (): Promise<DocumentData[]> => {
 		const arr: DocumentData[] = [];
-		const resQuery = query(collection(db, "posts"), orderBy("date", "asc"));
+		const resQuery = query(collection(db, "postsMinified"), orderBy("date", "asc"));
 		await getDocs(resQuery).then((snapshot) => {
 			snapshot.docs.map((doc) => {
 				const obj = doc.data();
@@ -45,16 +37,20 @@ export function Home() {
 	};
 
 	useEffect(() => {
-		queryHome().then((res) => setData(res as unknown as IPost[]));
+		queryHome().then((res) => setPosts(res as unknown as IPostMinified[]));
 	}, []);
 
-	console.log(data);
+	useEffect(() => {
+		setMostRecent(posts?.length ? posts[0] : undefined);
+	}, [posts]);
+
+	const directToPost = (id: number) => history.push(`/post/${id}`);
 
 	return (
 		<div className={css.home}>
 			<div className={css.mostRecentContainer}>
-				{data?.length ? (
-					<div className={css.mostRecentBody}>
+				{mostRecent ? (
+					<div onClick={() => directToPost(mostRecent.id)} className={css.mostRecentBody}>
 						<div className={css.imageContainer}>
 							<img
 								className={css.image}
@@ -62,20 +58,20 @@ export function Home() {
 							/>
 						</div>
 						<div className={css.bodyContainer}>
+							<div className={css.mostRecentText}>Most recent</div>
 							<div className={css.nameDate}>
-								<div className={css.name}>{data![0].name}</div>
-								<div className={css.date}>{data![0].date}</div>
+								<div className={css.name}>{mostRecent.name}</div>
+								<div className={css.date}>{mostRecent.date}</div>
 							</div>
-							<div className={css.description}>{data![0].description}</div>
-							<div className={css.keywords}>{data![0].keywords}</div>
+							<div className={css.keywords}>{mostRecent.keywords.join(", ")}</div>
 						</div>
 					</div>
 				) : (
-					"Loading..."
+					<div className={css.loading}>Loading...</div>
 				)}
 			</div>
-			<div className={css.navContainer}>
-				<Search />
+			<div className={css.searchContainer}>
+				<Search posts={posts} />
 			</div>
 		</div>
 	);

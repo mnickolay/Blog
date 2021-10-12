@@ -30,7 +30,7 @@ function App() {
 					<Route path="/" exact component={Home} />
 					<Route path="/about" exact component={About} />
 					<Route path="/subscribe" exact component={Subscribe} />
-					<Route path="post/:id" exact component={Post} />
+					<Route path="/post/:id" exact component={Post} />
 					<Route component={NotFound} />
 				</Switch>
 			</BrowserRouter>

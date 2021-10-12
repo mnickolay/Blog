@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { getFirestore, collection, getDocs, DocumentData, query } from "firebase/firestore";
+import { getFirestore, collection, getDocs, DocumentData, query, where } from "firebase/firestore";
+import { useParams } from "react-router";
 
 export function Post() {
-	const [data, setData] = useState<{}[]>();
+	const postId: { id: string } = useParams();
+	const [post, setPost] = useState<{}[]>();
 	const db = getFirestore();
-	const queryStuff = async (): Promise<DocumentData[]> => {
+
+	const queryPost = async (): Promise<DocumentData[]> => {
 		const arr: DocumentData[] = [];
-		const resQuery = query(collection(db, "posts"));
+		const resQuery = query(collection(db, "posts"), where("id", "==", parseInt(postId.id)));
 		await getDocs(resQuery).then((snapshot) => {
 			snapshot.docs.map((doc) => arr.push(doc.data()));
 		});
@@ -14,9 +17,9 @@ export function Post() {
 	};
 
 	useEffect(() => {
-		queryStuff().then((res) => setData(res));
+		queryPost().then((res) => setPost(res));
 	}, []);
 
-	console.log(data);
+	console.log(post);
 	return <>Post</>;
 }

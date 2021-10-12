@@ -43,7 +43,40 @@
 	.searchBody {
 		background-color: var(--colorPrimary);
 		border-radius: var(--searchBorderRadiusBottom);
+		display: flex;
+		flex-direction: column;
 		height: 430px;
+		overflow-y: auto;
 		width: 100%;
+
+		.searchItem {
+			border-bottom: 1px solid var(--colorSecondary);
+			display: flex;
+			flex-direction: column;
+			font-size: 0.8rem;
+			gap: 10px;
+			padding: 20px;
+			transition: var(--transition);
+
+			&:hover {
+				background-color: var(--colorSecondary);
+				transition: var(--transition);
+			}
+
+			.nameDate {
+				align-items: flex-end;
+				display: flex;
+				justify-content: space-between;
+
+				.date {
+					font-size: 0.7rem;
+				}
+			}
+
+			.description {
+				color: var(--textSecondary);
+				margin-top: auto;
+			}
+		}
 	}
 }
