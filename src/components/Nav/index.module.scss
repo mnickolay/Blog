@@ -1,54 +1,60 @@
 @import "../../themes.scss";
 
 .nav {
-	background-color: var(--accentPrimary);
+	background-color: var(--colorPrimary);
+	box-shadow: var(--boxShadowNav);
 	display: flex;
-	height: 70px;
+	height: var(--navSize);
+	padding: 0 8vw;
 
 	.navName {
 		align-items: center;
-		color: var(--textShowOnAccent);
+		color: var(--textPrimary);
 		display: flex;
 		flex-grow: 1;
-		font-size: 2rem;
-		margin-left: 30px;
+		font-family: var(--fontPlayfair);
+		font-size: 2.5rem;
 	}
 
 	.navLinks {
-		color: var(--textShowOnAccent) !important;
+		color: var(--textPrimary);
 		align-items: center;
 		display: flex;
 		flex-grow: 4;
 		justify-content: end;
-		margin-right: 30px;
 		text-decoration: none;
 
 		.navLinkSelected {
-			background-color: var(--accentSecondary) !important;
+			background-color: var(--accentPrimary) !important;
 			box-shadow: var(--boxShadowButton);
+			color: var(--textShowOnAccent) !important;
 		}
 
 		.navLink {
 			align-items: center;
 			background-color: transparent;
-			border: 1px solid transparent;
-			border-radius: 50px;
-			height: fit-content;
-			margin-left: 20px;
-			padding: 8px 15px;
+			border-radius: 50%;
+			color: var(--textPrimary);
+			display: flex;
+			font-family: var(--fontMerriweather);
+			height: var(--navButtonSize);
+			justify-content: center;
+			margin: 5px;
+			padding: 5px;
 			text-decoration: none;
 			transition: all ease 0.3s;
-		}
+			width: var(--navButtonSize);
 
-		.navLink:hover {
-			border: 1px solid var(--accentSecondary);
-			box-shadow: var(--boxShadowButton);
-			transition: all ease 0.3s;
-		}
+			&:hover {
+				box-shadow: var(--boxShadowButton);
+				transition: var(--transition);
+				transform: scale(1.2);
+			}
 
-		.navLink:visited {
-			color: var(--textShowOnAccent) !important;
-			text-decoration: none;
+			&:visited {
+				color: var(--textPrimary);
+				text-decoration: none;
+			}
 		}
 	}
 }

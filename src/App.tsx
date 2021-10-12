@@ -23,7 +23,7 @@ function App() {
 	const [theme, setTheme] = useState();
 
 	return (
-		<div className={`${css.body} ${css.size} ${css.colorPrimary}`}>
+		<div className={css.body}>
 			<BrowserRouter>
 				<Nav />
 				<Switch>

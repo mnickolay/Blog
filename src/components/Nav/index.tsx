@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faInfo, faAt, faPalette } from "@fortawesome/free-solid-svg-icons";
 import css from "./index.module.scss";
 
 export function Nav() {
@@ -15,7 +17,7 @@ export function Nav() {
 					to="/"
 					className={`${navLocation === "" ? css.navLinkSelected : ""} ${css.navLink}`}
 				>
-					Home
+					<FontAwesomeIcon icon={faHome} />
 				</Link>
 				<Link
 					to="/about"
@@ -23,7 +25,7 @@ export function Nav() {
 						css.navLink
 					}`}
 				>
-					About
+					<FontAwesomeIcon icon={faInfo} />
 				</Link>
 				<Link
 					to="/subscribe"
@@ -31,8 +33,11 @@ export function Nav() {
 						css.navLink
 					}`}
 				>
-					Subscribe
+					<FontAwesomeIcon icon={faAt} />
 				</Link>
+				<div className={css.navLink}>
+					<FontAwesomeIcon icon={faPalette} />
+				</div>
 			</div>
 		</div>
 	);

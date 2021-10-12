@@ -10,6 +10,7 @@ import {
 	Timestamp,
 } from "firebase/firestore";
 import css from "./index.module.scss";
+import { Search } from "./Search";
 
 interface IPost {
 	id: number;
@@ -28,7 +29,7 @@ export function Home() {
 
 	const queryHome = async (): Promise<DocumentData[]> => {
 		const arr: DocumentData[] = [];
-		const resQuery = query(collection(db, "posts"), orderBy("date", "desc"), limit(1));
+		const resQuery = query(collection(db, "posts"), orderBy("date", "asc"));
 		await getDocs(resQuery).then((snapshot) => {
 			snapshot.docs.map((doc) => {
 				const obj = doc.data();
@@ -51,25 +52,31 @@ export function Home() {
 
 	return (
 		<div className={css.home}>
-			<div className={css.mostRecent}>
-				<div className={css.imageContainer}>
-					<img
-						className={css.image}
-						src="https://images.unsplash.com/photo-1633678861611-858fc0041aa3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-					/>
-				</div>
-				<div className={css.bodyContainer}>
-					{data?.length ? (
-						<div className={css.bodyPadding}>
-							<div className={css.name}>{data![0].name}</div>
-							<div className={css.date}>{data![0].date}</div>
-							<div className={css.keywords}>{data![0].keywords}</div>
-							<div className={css.description}>{data![0].description}</div>
+			<div className={css.mostRecentContainer}>
+				{data?.length ? (
+					<div className={css.mostRecentBody}>
+						<div className={css.imageContainer}>
+							<img
+								className={css.image}
+								src="https://images.unsplash.com/photo-1633678861611-858fc0041aa3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
+							/>
 						</div>
-					) : null}
-				</div>
+						<div className={css.bodyContainer}>
+							<div className={css.nameDate}>
+								<div className={css.name}>{data![0].name}</div>
+								<div className={css.date}>{data![0].date}</div>
+							</div>
+							<div className={css.description}>{data![0].description}</div>
+							<div className={css.keywords}>{data![0].keywords}</div>
+						</div>
+					</div>
+				) : (
+					"Loading..."
+				)}
 			</div>
-			<div className={css.nav}></div>
+			<div className={css.navContainer}>
+				<Search />
+			</div>
 		</div>
 	);
 }

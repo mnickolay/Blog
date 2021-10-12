@@ -1,5 +1,8 @@
 @import "themes.scss";
 
+//fonts
+
+//standard classes
 .size {
 	font-size: var(--size);
 }
@@ -28,6 +31,10 @@
 	background-color: var(--accentSecondary);
 }
 
-// .body {
-// 	height: 100vh;
-// }
+.body {
+	background-color: var(--colorSecondary);
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+	z-index: -100;
+}

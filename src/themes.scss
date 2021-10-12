@@ -2,29 +2,58 @@
 	--size: 1rem;
 	--font: null;
 	--borderRadius: 8px;
-	--boxShadow: 0px 10px 14px rgb(182, 182, 182), -0px 10px 14px rgb(182, 182, 182);
-	--boxShadowButton: 0px 6px 20px rgb(199, 199, 199), -0px 6px 20px rgb(199, 199, 199);
+
+	--boxShadow: 0px 10px 14px rgb(216, 216, 216), -0px 10px 14px rgb(216, 216, 216);
+	--boxShadowHover: 0px 10px 14px rgb(194, 194, 194), -0px 10px 14px rgb(194, 194, 194);
+	--boxShadowNav: 1px 0 10px rgb(214, 214, 214);
+	--boxShadowButton: 0px 4px 7px rgb(214, 214, 214), -0px 4px 7px rgb(214, 214, 214);
+
+	--transition: 0.3s ease all;
+
+	--searchBorderRadiusTop: 8px 8px 0 0;
+	--searchBorderRadiusBottom: 0 0 8px 8px;
+
+	--fontPlayfair: Playfair;
+	--fontMerriweather: Merriweather;
+	--textHeader: 2.2rem;
+
+	--navSize: 80px;
+	--navButtonSize: calc(var(--navSize) * 0.5);
+
 	--textPrimary: #000;
 	--textSecondary: #555;
-	--textShowOnAccent: #000;
-	--colorPriamry: #e9e9e9;
-	--colorSecondary: #ddd;
-	--accentPrimary: #e9e9e9;
-	--accentSecondary: #fff;
-	background-color: var(--colorPriamry);
+	--textShowOnAccent: rgb(255, 255, 255);
+
+	--colorPrimary: #ffffff;
+	--colorSecondary: rgb(245, 245, 245);
+
+	--accentPrimary: #000000;
+	--accentSecondary: #ffffff;
 }
 
 [data-size="xs"] {
 	--size: 0.8rem;
 }
 
-// size
-// text primary
-// text secondary
-// color primary
-// color secondary
-// accent primary
-// accent secondary
+@font-face {
+	font-family: Playfair;
+	src: url(./fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Playfair-Italic;
+	src: url(./fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Merriweather;
+	src: url(./fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+	font-family: Merriweather-Italic;
+	src: url(./fonts/Merriweather-Italic.ttf);
+}
 
 // white/black
 // soft (grays)

@@ -1,46 +1,91 @@
 .home {
-	align-items: center;
 	align-content: center;
 	display: flex;
 	flex-direction: row;
-	gap: 3vw;
-	justify-content: space-evenly;
-	margin: 10vw;
+	gap: 6vw;
+	height: fit-content;
+	justify-content: center;
+	margin: 80px 10vw;
 
-	.mostRecent {
-		border: none;
+	.mostRecentContainer {
+		background-color: var(--colorPrimary);
 		border-radius: var(--borderRadius);
-		background-color: var(--accentSeconary);
 		box-shadow: var(--boxShadow);
+		display: flex;
+		flex-direction: column;
+		flex-grow: 2;
+		max-width: 750px;
+		transition: var(--transition);
 		width: 66%;
 
-		.imageContainer {
-			width: 100%;
-			height: 100%;
-
-			.image {
-				object-fit: cover;
-				width: 100%;
-				height: 100%;
-			}
+		&:hover {
+			box-shadow: var(--boxShadowHover);
+			transition: var(--transition);
+			transform: scale(1.02);
 		}
 
-		.bodyContainer {
-			background-color: white;
-			border-radius: 0 0 8px 8px;
+		.mostRecentBody {
+			display: flex;
+			flex-direction: column;
+			height: 500px;
+			max-height: 500px;
 
-			.bodyPadding {
-				padding: 15px 25px;
+			.imageContainer {
+				border-radius: 8px 8px 0 0;
+				height: 340px;
+				max-height: 340px;
+				width: 100%;
+
+				.image {
+					border-radius: 8px 8px 0 0;
+					height: 100%;
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+
+			.bodyContainer {
+				background-color: white;
+				border-radius: 0 0 8px 8px;
+				color: var(--textPrimary);
+				display: flex;
+				flex-direction: column;
+				font-family: var(--fontMerriweather);
+				height: 120px;
+				justify-content: space-between;
+				margin: 20px;
+				min-height: 120px;
+
+				.nameDate {
+					align-items: flex-end;
+					display: flex;
+					justify-content: space-between;
+
+					.name {
+						font-size: 1.5rem;
+					}
+
+					.date {
+						font-size: 1.2rem;
+					}
+				}
+
+				.description {
+				}
+
+				.keywords {
+					color: var(--textSecondary);
+					font-size: 0.8rem;
+				}
 			}
 		}
 	}
 
-	.nav {
-		background-color: black;
-		border: none;
-		border-radius: var(--borderRadius);
-		box-shadow: var(--boxShadow);
+	.navContainer {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		max-width: 375px;
 		width: 33%;
-		height: 30vh;
 	}
 }
