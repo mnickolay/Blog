@@ -13,6 +13,8 @@ import { Search } from "./Search";
 import { IPostMinified } from "../common/IPost";
 import { useHistory } from "react-router";
 import { Posts } from "./Posts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 export function Home() {
 	const history = useHistory();
@@ -68,7 +70,9 @@ export function Home() {
 						</div>
 					</div>
 				) : (
-					<div className={css.loading}>Loading...</div>
+					<div className={css.loading}>
+						<FontAwesomeIcon icon={faCircleNotch} />
+					</div>
 				)}
 			</div>
 			<Search posts={posts} />

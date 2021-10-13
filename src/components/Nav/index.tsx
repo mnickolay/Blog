@@ -5,12 +5,10 @@ import {
 	faHome,
 	faInfo,
 	faAt,
-	faPalette,
 	faSun,
 	faMoon,
 	faTree,
 	faRobot,
-	IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import css from "./index.module.scss";
 import PropTypes from "prop-types";
@@ -46,7 +44,7 @@ export function Nav() {
 		children: PropTypes.element.isRequired,
 	};
 
-	const determineThemeIcon = (): IconDefinition => {
+	const determineThemeIcon = () => {
 		switch (theme) {
 			case "light":
 				return faSun;
@@ -65,6 +63,7 @@ export function Nav() {
 		const html = document.querySelector("html");
 		html!.dataset.theme = theme ?? "light";
 		localStorage.setItem("theme", theme ?? "light");
+		setTheme(theme);
 	};
 
 	return (
