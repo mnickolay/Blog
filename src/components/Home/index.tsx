@@ -12,6 +12,7 @@ import css from "./index.module.scss";
 import { Search } from "./Search";
 import { IPostMinified } from "../common/IPost";
 import { useHistory } from "react-router";
+import { Posts } from "./Posts";
 
 export function Home() {
 	const history = useHistory();
@@ -70,9 +71,8 @@ export function Home() {
 					<div className={css.loading}>Loading...</div>
 				)}
 			</div>
-			<div className={css.searchContainer}>
-				<Search posts={posts} />
-			</div>
+			<Search posts={posts} />
+			<Posts posts={posts?.slice(1)} />
 		</div>
 	);
 }

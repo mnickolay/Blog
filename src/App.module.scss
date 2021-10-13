@@ -1,40 +1,34 @@
 @import "themes.scss";
 
-//fonts
+html {
+	background-color: var(--colorSecondary) !important;
 
-//standard classes
-.size {
-	font-size: var(--size);
-}
+	&::-webkit-scrollbar {
+		border-radius: var(--borderRadius);
+		width: 10px;
+	}
 
-.textPrimary {
-	color: var(--textPrimary);
-}
+	&::-webkit-scrollbar-track {
+		border-radius: var(--borderRadius);
+		background: var(--scrollBarTrack);
+	}
 
-.textSecondary {
-	color: var(--textSecondary);
-}
+	&::-webkit-scrollbar-thumb {
+		border-radius: var(--borderRadius);
+		background: var(--scrollBarThumb);
+	}
 
-.colorPrimary {
-	background-color: var(--colorPriamry);
-}
-
-.colorSecondary {
-	background-color: var(--colorSecondary);
-}
-
-.accentPrimary {
-	background-color: var(--accentPrimary);
-}
-
-.accentSeconary {
-	background-color: var(--accentSecondary);
+	&::-webkit-scrollbar-thumb:hover {
+		background: var(--scrollBarHover);
+	}
 }
 
 .body {
-	background-color: var(--colorSecondary);
-	height: 100vh;
-	position: absolute;
-	width: 100vw;
-	z-index: -100;
+	background-color: var(--colorSecondary) !important;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	transition: var(--transition);
+	width: 100%;
 }

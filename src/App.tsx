@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { initializeApp } from "firebase/app";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Nav } from "./components/Nav";
-import { Footer } from "./components/Footer";
 import { Subscribe } from "./components/Subscribe";
 import { About } from "./components/About";
 import { NotFound } from "./components/NotFound";
 import css from "./App.module.scss";
 import { Post } from "./components/Post";
+import { Footer } from "./components/Footer";
 
 initializeApp({
 	apiKey: "AIzaSyBhw-LJ7nVCLyq7ofN48_OK3AydrKH8vNg",
@@ -20,10 +20,12 @@ initializeApp({
 });
 
 function App() {
-	const [theme, setTheme] = useState();
+	const theme = localStorage.getItem("theme");
+	const html = document.querySelector("html");
+	html!.dataset.theme = theme ?? "light";
 
 	return (
-		<div className={css.body}>
+		<div className={`${css.body}`}>
 			<BrowserRouter>
 				<Nav />
 				<Switch>

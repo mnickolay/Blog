@@ -1,38 +1,113 @@
 :root {
-	--size: 1rem;
-	--font: null;
 	--borderRadius: 8px;
-
-	--boxShadow: 0px 10px 14px rgb(216, 216, 216), -0px 10px 14px rgb(216, 216, 216);
-	--boxShadowHover: 0px 10px 14px rgb(194, 194, 194), -0px 10px 14px rgb(194, 194, 194);
-	--boxShadowNav: 1px 0 10px rgb(214, 214, 214);
-	--boxShadowButton: 0px 4px 7px rgb(214, 214, 214), -0px 4px 7px rgb(214, 214, 214);
-
-	--transition: 0.3s ease all;
-
+	--boxShadowHover: 0px 10px 14px rgba(0, 0, 0, 0.35), -0px 10px 14px rgba(0, 0, 0, 0.35);
+	--boxShadowNav: 1px 0 10px rgba(0, 0, 0, 0.2);
+	--boxShadowButton: 0px 4px 7px rgba(0, 0, 0, 0.4), -0px 4px 7px rgba(0, 0, 0, 0.4);
+	--fontMerriweather: Merriweather;
+	--fontPlayfair: Playfair;
+	--navButtonSize: calc(var(--navSize) * 0.5);
+	--navSize: 80px;
 	--searchBorderRadiusTop: 8px 8px 0 0;
 	--searchBorderRadiusBottom: 0 0 8px 8px;
-
-	--fontPlayfair: Playfair;
-	--fontMerriweather: Merriweather;
 	--textHeader: 2.2rem;
+	--transition: 0.3s ease all;
+}
 
-	--navSize: 80px;
-	--navButtonSize: calc(var(--navSize) * 0.5);
+:root[data-theme="light"] {
+	--navColor: #1f1f1f;
+	--navSelectedBackground: #1f1f1f;
+	--navSelectedColor: #f3f3f3;
+	--navHoverBackground: #dadada;
+	--navHoverColor: #101010;
+	--navThemeColor: #1f1f1f;
+
+	--footerColor: #fff;
+	--footerBackground: #fff;
+
+	--colorPrimary: #ffffff;
+	--colorSecondary: #f5f5f5;
+
+	--scrollBarTrack: #f5f5f5;
+	--scrollBarThumb: #dcdcdc;
+	--scrollBarHover: #afafaf;
+
+	--searchBackground: #ffffff;
+	--searchBorderBottom: 1px solid rgb(240, 240, 240);
 
 	--textPrimary: #000;
 	--textSecondary: #6a6a6a;
-	--textShowOnAccent: rgb(255, 255, 255);
-
-	--colorPrimary: #ffffff;
-	--colorSecondary: rgb(245, 245, 245);
-
-	--accentPrimary: #000000;
-	--accentSecondary: #ffffff;
+	--textShowOnAccent: #ffffff;
 }
 
-[data-size="xs"] {
-	--size: 0.8rem;
+:root[data-theme="dark"] {
+	--navColor: #f3f3f3;
+	--navSelectedBackground: #eee;
+	--navSelectedColor: #000000;
+	--navHoverBackground: #bdbdbd;
+	--navHoverColor: #101010;
+	--navThemeColor: #f3f3f3;
+
+	--searchBackground: #fff;
+
+	--colorPrimary: #0e0e0e;
+	--colorSecondary: #000000;
+
+	--scrollBarTrack: #333333;
+	--scrollBarThumb: #727272;
+	--scrollBarHover: #595959;
+
+	--searchBackground: #0c0c0c;
+	--searchBorderBottom: 1px solid #131313;
+
+	--textPrimary: #eee;
+	--textSecondary: #9e9e9e;
+	--textShowOnAccent: #161616;
+}
+
+:root[data-theme="green"] {
+	--navColor: #f3f3f3;
+	--navSelectedBackground: #15975a;
+	--navSelectedColor: #101010;
+	--navHoverBackground: #60ac88;
+	--navHoverColor: #101010;
+	--navThemeColor: #f3f3f3;
+
+	--colorPrimary: #0e4b2e;
+	--colorSecondary: #105536;
+
+	--scrollBarTrack: #333333;
+	--scrollBarThumb: #727272;
+	--scrollBarHover: #595959;
+
+	--searchBackground: #0c0c0c;
+	--searchBorderBottom: 1px solid #131313;
+
+	--textPrimary: #e8ffef;
+	--textSecondary: #9ab6a2;
+	--textShowOnAccent: #ffffff;
+}
+
+:root[data-theme="blue"] {
+	--navColor: #f3f3f3;
+	--navSelectedBackground: #fd3a2c;
+	--navSelectedColor: #101010;
+	--navHoverBackground: #ae3f37;
+	--navHoverColor: #101010;
+	--navThemeColor: #fd3a2c;
+
+	--colorPrimary: #10506d;
+	--colorSecondary: #163d57;
+
+	--scrollBarTrack: #333333;
+	--scrollBarThumb: #727272;
+	--scrollBarHover: #595959;
+
+	--searchBackground: #0c0c0c;
+	--searchBorderBottom: 1px solid #131313;
+
+	--textPrimary: #e8ffef;
+	--textSecondary: #9ab6a2;
+	--textShowOnAccent: #ffffff;
 }
 
 @font-face {
@@ -54,8 +129,3 @@
 	font-family: Merriweather-Italic;
 	src: url(./fonts/Merriweather-Italic.ttf);
 }
-
-// white/black
-// soft (grays)
-// earth (brown/green)
-//

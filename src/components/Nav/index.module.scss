@@ -1,8 +1,8 @@
 @import "../../themes.scss";
 
 .nav {
-	background-color: var(--colorPrimary);
-	box-shadow: var(--boxShadowNav);
+	// background-color: var(--colorPrimary);
+	// box-shadow: var(--boxShadowNav);
 	display: flex;
 	height: var(--navSize);
 	padding: 0 8vw;
@@ -17,23 +17,25 @@
 	}
 
 	.navLinks {
-		color: var(--textPrimary);
+		color: var(--navColor);
 		align-items: center;
 		display: flex;
 		flex-grow: 4;
 		justify-content: end;
 		text-decoration: none;
+		position: relative;
+		z-index: 5;
 
 		.navLinkSelected {
-			background-color: var(--accentPrimary) !important;
-			color: var(--textShowOnAccent) !important;
+			background-color: var(--navSelectedBackground) !important;
+			color: var(--navSelectedColor) !important;
 		}
 
 		.navLink {
 			align-items: center;
 			background-color: transparent;
-			border-radius: 50%;
-			color: var(--textPrimary);
+			border-radius: 50px;
+			color: var(--navColor);
 			display: flex;
 			font-family: var(--fontMerriweather);
 			height: var(--navButtonSize);
@@ -41,18 +43,81 @@
 			margin: 5px;
 			padding: 5px;
 			text-decoration: none;
-			transition: all ease 0.3s;
+			transition: var(--transition);
 			width: var(--navButtonSize);
 
 			&:hover {
+				background-color: var(--navHoverBackground);
 				box-shadow: var(--boxShadowButton);
+				color: var(--navHoverColor);
 				transition: var(--transition);
-				transform: scale(1.2);
+			}
+		}
+
+		.theme {
+			align-items: center;
+			background-color: transparent;
+			border-radius: 50px;
+			color: var(--navThemeColor);
+			display: flex;
+			font-family: var(--fontMerriweather);
+			height: var(--navButtonSize);
+			justify-content: center;
+			margin: 5px;
+			padding: 5px;
+			text-decoration: none;
+			transition: var(--transition);
+			width: var(--navButtonSize);
+
+			&:hover {
+				background-color: var(--navHoverBackground);
+				box-shadow: var(--boxShadowButton);
+				color: var(--navHoverColor);
+				transition: var(--transition);
 			}
 
-			&:visited {
-				color: var(--textPrimary);
-				text-decoration: none;
+			.themes {
+				align-items: center;
+				background-color: var(--navHoverBackground);
+				box-shadow: var(--boxShadowButton);
+				border-radius: 50px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				opacity: 1;
+				padding-top: 50px;
+				position: absolute;
+				top: 15px;
+				transition: var(--transition);
+				width: 50px;
+				z-index: -1;
+
+				.themesItem {
+					align-items: center;
+					background-color: transparent;
+					border-radius: 50px;
+					color: var(--navHoverColor);
+					display: flex;
+					font-family: var(--fontMerriweather);
+					height: var(--navButtonSize);
+					justify-content: center;
+					padding: 5px;
+					text-decoration: none;
+					transition: var(--transition);
+					width: var(--navButtonSize);
+
+					& > * {
+						border-radius: 50px;
+						margin: 5px;
+						padding: 12px;
+						transition: var(--transition);
+
+						&:hover {
+							box-shadow: var(--boxShadowButton);
+							transition: var(--transition);
+						}
+					}
+				}
 			}
 		}
 	}

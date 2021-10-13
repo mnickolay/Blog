@@ -1,8 +1,12 @@
+@import "../../themes.scss";
+
 .home {
 	align-content: center;
+	background-color: var(--colorSecondary) !important;
 	display: flex;
 	flex-direction: row;
-	gap: 6vw;
+	flex-wrap: wrap;
+	gap: 80px 6vw;
 	height: fit-content;
 	justify-content: center;
 	margin: 80px 10vw;
@@ -20,7 +24,6 @@
 		transition: var(--transition);
 
 		&:hover {
-			background-color: var(--colorSecondary);
 			box-shadow: var(--boxShadowHover);
 			transition: var(--transition);
 			transform: scale(1.02);
@@ -87,14 +90,5 @@
 				}
 			}
 		}
-	}
-
-	.searchContainer {
-		display: flex;
-		flex-basis: 0;
-		flex-direction: column;
-		flex-grow: 1;
-		max-width: 450px;
-		width: 33%;
 	}
 }
