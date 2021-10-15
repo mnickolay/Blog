@@ -1,12 +1,15 @@
 :root {
 	--borderRadius: 8px;
-	--boxShadowHover: 0px 10px 14px rgba(0, 0, 0, 0.35), -0px 10px 14px rgba(0, 0, 0, 0.35);
-	--boxShadowNav: 1px 0 10px rgba(0, 0, 0, 0.2);
-	--boxShadowButton: 0px 4px 7px rgba(0, 0, 0, 0.4), -0px 4px 7px rgba(0, 0, 0, 0.4);
+	--boxShadowHover: 0 10px 14px rgba(0, 0, 0, 0.25);
+	--boxShadow: 0 10px 14px rgba(0, 0, 0, 0.1);
+	--boxShadowNav: 0 1px 10px rgba(0, 0, 0, 0.2);
+	--boxShadowButton: 0 4px 7px rgba(0, 0, 0, 0.4);
 	--fontMerriweather: Merriweather;
+	--fontMerriweatherItalic: Merriweather-Italic;
 	--fontPlayfair: Playfair;
 	--navButtonSize: calc(var(--navSize) * 0.5);
 	--navSize: 80px;
+	--quoteBackground: rgba(0, 0, 0, 0.1);
 	--searchBorderRadiusTop: 8px 8px 0 0;
 	--searchBorderRadiusBottom: 0 0 8px 8px;
 	--textHeader: 2.2rem;
@@ -14,20 +17,23 @@
 }
 
 :root[data-theme="light"] {
+	--background: #f3f3f3;
+
 	--navColor: #1f1f1f;
 	--navSelectedBackground: #1f1f1f;
 	--navSelectedColor: #f3f3f3;
 	--navHoverBackground: #dadada;
 	--navHoverColor: #101010;
 	--navThemeColor: #1f1f1f;
+	--navTextColor: #000;
 
 	--footerColor: #fff;
 	--footerBackground: #fff;
 
 	--colorPrimary: #ffffff;
-	--colorSecondary: #f5f5f5;
+	--colorSecondary: #f3f3f3;
 
-	--scrollBarTrack: #f5f5f5;
+	--scrollBarTrack: #f3f3f3;
 	--scrollBarThumb: #dcdcdc;
 	--scrollBarHover: #afafaf;
 
@@ -40,17 +46,20 @@
 }
 
 :root[data-theme="dark"] {
+	--background: #212121;
+
 	--navColor: #f3f3f3;
 	--navSelectedBackground: #eee;
 	--navSelectedColor: #000000;
-	--navHoverBackground: #bdbdbd;
-	--navHoverColor: #101010;
+	--navHoverBackground: #0e0e0e;
+	--navHoverColor: #f3f3f3;
 	--navThemeColor: #f3f3f3;
+	--navTextColor: #eee;
 
 	--searchBackground: #fff;
 
 	--colorPrimary: #0e0e0e;
-	--colorSecondary: #000000;
+	--colorSecondary: #212121;
 
 	--scrollBarTrack: #333333;
 	--scrollBarThumb: #727272;
@@ -64,13 +73,42 @@
 	--textShowOnAccent: #161616;
 }
 
+:root[data-theme="gray"] {
+	--background: linear-gradient(180deg, rgb(151, 151, 151) 0%, rgb(192, 192, 192) 100%);
+
+	--navColor: #696f70;
+	--navSelectedBackground: #383c3c;
+	--navSelectedColor: #d5d5d5;
+	--navHoverBackground: #696f70;
+	--navHoverColor: #d5d5d5;
+	--navThemeColor: #383c3c;
+	--navTextColor: #090909;
+
+	--colorPrimary: #929292;
+	--colorSecondary: #b6b6b6;
+
+	--scrollBarTrack: #333333;
+	--scrollBarThumb: #727272;
+	--scrollBarHover: #595959;
+
+	--searchBackground: #0c0c0c;
+	--searchBorderBottom: 1px solid #131313;
+
+	--textPrimary: #090909;
+	--textSecondary: #3a3c3c;
+	--textShowOnAccent: #ffffff;
+}
+
 :root[data-theme="green"] {
+	--background: #105536;
+
 	--navColor: #f3f3f3;
 	--navSelectedBackground: #15975a;
 	--navSelectedColor: #101010;
 	--navHoverBackground: #60ac88;
 	--navHoverColor: #101010;
-	--navThemeColor: #f3f3f3;
+	--navThemeColor: #15975a;
+	--navTextColor: #e8ffef;
 
 	--colorPrimary: #0e4b2e;
 	--colorSecondary: #105536;
@@ -88,12 +126,15 @@
 }
 
 :root[data-theme="blue"] {
+	--background: #163d57;
+
 	--navColor: #f3f3f3;
 	--navSelectedBackground: #fd3a2c;
 	--navSelectedColor: #101010;
-	--navHoverBackground: #ae3f37;
+	--navHoverBackground: #b10c00;
 	--navHoverColor: #101010;
 	--navThemeColor: #fd3a2c;
+	--navTextColor: #e8ffef;
 
 	--colorPrimary: #10506d;
 	--colorSecondary: #163d57;

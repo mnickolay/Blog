@@ -1,0 +1,120 @@
+.postContainer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: fit-content;
+	justify-content: center;
+
+	.loading {
+		align-items: center;
+		color: var(--navThemeColor);
+		display: flex;
+		height: 100%;
+		justify-content: center;
+
+		& > * {
+			animation: spin 1s linear infinite;
+			height: 30px;
+			width: 30px;
+		}
+	}
+
+	.post {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.imageContainer {
+			height: 400px;
+			max-height: 400px;
+			width: 100%;
+
+			.image {
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+			}
+		}
+
+		.body {
+			align-items: center;
+			color: var(--textPrimary);
+			display: flex;
+			flex-direction: column;
+			margin: 50px 10vw;
+
+			.name {
+				text-align: center;
+				font-family: var(--fontPlayfair);
+				font-size: 4rem;
+				margin-bottom: 20px;
+			}
+
+			.description {
+				color: var(--textSecondary);
+				font-family: var(--fontMerriweatherItalic);
+				font-size: 1.2rem;
+				margin-bottom: 20px;
+			}
+
+			.date {
+				font-family: var(--fontMerriweather);
+				margin-bottom: 20px;
+			}
+
+			.text {
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+				font-family: "Times New Roman", Times, serif;
+				font-size: 1.3rem;
+				gap: 10px;
+				line-height: 1.6em;
+				margin: 0 15vw;
+				max-width: 800px;
+
+				// p:first-of-type::first-letter {
+				// 	padding: 0 0.3rem;
+				// 	margin: 0 0.3rem 0 0;
+				// 	font-size: 4rem;
+				// 	float: left;
+				// 	line-height: 1;
+				// }
+
+				.indent {
+					text-indent: 3em;
+				}
+
+				.quote {
+					border-radius: var(--borderRadius);
+					background-color: var(--quoteBackground);
+					font-size: 0.9em;
+					margin: 1em;
+					padding: 30px 40px;
+					position: relative;
+
+					.quoteLeft {
+						color: var(--textSecondary);
+						left: 10px;
+						position: absolute;
+						top: 7px;
+					}
+
+					.quoteRight {
+						bottom: 5px;
+						color: var(--textSecondary);
+						position: absolute;
+						right: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

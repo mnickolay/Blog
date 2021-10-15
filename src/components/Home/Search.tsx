@@ -50,7 +50,7 @@ export function Search({ posts }: { posts: IPostMinified[] | undefined }) {
 									<div className={css.name}>{p.name}</div>
 									<div className={css.date}>{p.date}</div>
 								</div>
-								<div className={css.description}>{p.keywords.join(", ")}</div>
+								<div className={css.keywords}>{p.keywords.join(", ")}</div>
 							</div>
 						))}
 				</div>

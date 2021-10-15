@@ -9,6 +9,8 @@ import {
 	faMoon,
 	faTree,
 	faRobot,
+	faCloud,
+	faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
 import css from "./index.module.scss";
 import PropTypes from "prop-types";
@@ -50,6 +52,8 @@ export function Nav() {
 				return faSun;
 			case "dark":
 				return faMoon;
+			case "gray":
+				return faCloud;
 			case "green":
 				return faTree;
 			case "blue":
@@ -102,6 +106,9 @@ export function Nav() {
 								</div>
 								<div className={css.themesItem} onClick={() => themeClick("dark")}>
 									<FontAwesomeIcon icon={faMoon} />
+								</div>
+								<div className={css.themesItem} onClick={() => themeClick("gray")}>
+									<FontAwesomeIcon icon={faCloud} />
 								</div>
 								<div className={css.themesItem} onClick={() => themeClick("green")}>
 									<FontAwesomeIcon icon={faTree} />

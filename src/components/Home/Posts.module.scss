@@ -5,7 +5,7 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 80px 40px;
+	row-gap: 80px;
 	justify-content: space-evenly;
 	width: 100%;
 
@@ -14,14 +14,14 @@
 		border-radius: var(--borderRadius);
 		box-shadow: var(--boxShadow);
 		color: var(--textPrimary);
+		cursor: pointer;
 		display: flex;
-		flex-basis: 33%;
+		flex-basis: 0;
 		flex-direction: column;
 		flex-grow: 1;
-		height: 400px;
-		max-height: 400px;
-		max-width: 350px;
-		min-width: 250px;
+		margin: 0 2em;
+		max-width: 30em;
+		min-width: 25em;
 		transition: var(--transition);
 
 		&:hover {

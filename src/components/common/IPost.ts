@@ -4,6 +4,7 @@ export interface IPost {
 	date: string;
 	keywords: string[];
 	body: string[];
+	bodyText: string[];
 	bodyQuotes: string[];
 	image?: string;
 	description: string;

@@ -2,25 +2,25 @@
 
 .home {
 	align-content: center;
-	background-color: var(--colorSecondary) !important;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 80px 6vw;
-	height: fit-content;
-	justify-content: center;
-	margin: 80px 10vw;
+	justify-content: space-evenly;
+	margin: 50px 8em;
+	row-gap: 80px;
 
 	.mostRecentContainer {
 		background-color: var(--colorPrimary);
 		border-radius: var(--borderRadius);
 		box-shadow: var(--boxShadow);
 		color: var(--textPrimary);
+		cursor: pointer;
 		display: flex;
 		flex-basis: 0;
 		flex-direction: column;
 		flex-grow: 2;
-		max-width: 900px;
+		margin: 0 2em;
+		min-width: 25em;
 		transition: var(--transition);
 
 		&:hover {
@@ -79,10 +79,12 @@
 				.nameDate {
 					align-items: flex-end;
 					display: flex;
+					font-family: var(--fontPlayfair);
+					gap: 2em;
 					justify-content: space-between;
 
 					.name {
-						font-size: 1.5rem;
+						font-size: 1.7rem;
 					}
 
 					.date {
@@ -99,6 +101,7 @@
 		}
 	}
 }
+
 @keyframes spin {
 	to {
 		transform: rotate(360deg);
