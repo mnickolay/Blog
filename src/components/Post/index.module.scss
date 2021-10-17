@@ -74,13 +74,17 @@
 				margin: 0 15vw;
 				max-width: 800px;
 
-				// p:first-of-type::first-letter {
-				// 	padding: 0 0.3rem;
-				// 	margin: 0 0.3rem 0 0;
-				// 	font-size: 4rem;
-				// 	float: left;
-				// 	line-height: 1;
-				// }
+				.indent:first-of-type::first-letter {
+					padding: 0 0.3rem;
+					margin: 0 0.3rem 0 0;
+					font-size: 4rem;
+					float: left;
+					line-height: 1;
+				}
+
+				.indent:first-of-type {
+					text-indent: 0 !important;
+				}
 
 				.indent {
 					text-indent: 3em;

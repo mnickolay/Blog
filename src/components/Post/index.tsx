@@ -62,14 +62,14 @@ export function Post() {
 						<div className={css.text}>
 							{post.body.map((t, i) => {
 								switch (t.toLocaleUpperCase()) {
-									case "/*P":
+									case "P":
 										textCount++;
 										return (
 											<div key={`${t}${i}`} className={css.indent}>
 												{post?.bodyText[textCount - 1]}
 											</div>
 										);
-									case "/*Q":
+									case "Q":
 										quotesCount++;
 										return (
 											<div key={`${t}${i}`} className={css.quote}>
@@ -82,7 +82,7 @@ export function Post() {
 												</div>
 											</div>
 										);
-									case "/*C":
+									case "C":
 										textCount++;
 										return (
 											<div key={`${t}${i}`}>

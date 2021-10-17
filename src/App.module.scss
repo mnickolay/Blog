@@ -50,7 +50,7 @@ html {
 		border-radius: 50px;
 		bottom: 3em;
 		box-shadow: var(--boxShadowButton);
-		color: var(--navColor);
+		color: var(--navSelectedColor);
 		cursor: pointer;
 		height: var(--navButtonSize);
 		justify-content: center;
@@ -66,6 +66,7 @@ html {
 
 		&:hover {
 			background-color: var(--navHoverBackground);
+			color: var(--navHoverColor);
 			transform: scale(1.1);
 		}
 
